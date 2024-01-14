@@ -7,6 +7,11 @@ export default function SearchBar(props) {
     setId(event.target.value);
   };
 
+  const search = () => {
+    props.onSearch(id);
+    setId("");
+  };
+
   return (
     <div>
       <input
@@ -15,9 +20,7 @@ export default function SearchBar(props) {
         placeholder="Ingresa un ID"
         value={id}
       />
-      <button onClick={() => props.onSearch("ID del personaje")}>
-        Agregar
-      </button>
+      <button onClick={search}>Agregar</button>
     </div>
   );
 }
