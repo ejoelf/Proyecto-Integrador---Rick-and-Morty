@@ -3,7 +3,7 @@ import SearchBar from "../searchBar/SearchBar.jsx";
 
 export default function Nav({ onSearch }) {
   return (
-    <div>
+    <nav>
       <Link to="/home">
         <button>Home</button>
       </Link>
@@ -11,6 +11,6 @@ export default function Nav({ onSearch }) {
         <button>About</button>
       </Link>
       <SearchBar onSearch={onSearch} />
-    </div>
+    </nav>
   );
 }

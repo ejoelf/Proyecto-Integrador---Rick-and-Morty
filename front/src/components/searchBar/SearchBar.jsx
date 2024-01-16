@@ -7,6 +7,12 @@ export default function SearchBar(props) {
     setId(event.target.value);
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      search();
+    }
+  };
+
   const search = () => {
     props.onSearch(id);
     setId("");
@@ -17,10 +23,13 @@ export default function SearchBar(props) {
       <input
         type="search"
         onChange={handleChange}
+        onKeyPress={handleKeyPress}
         placeholder="Ingresa un ID"
         value={id}
       />
-      <button onClick={search}>Agregar</button>
+      <button onClick={search} disabled={!id.trim()}>
+        Agregar
+      </button>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import "./Form.css";
 import { useState } from "react";
 import validation from "./validation";
 
@@ -22,35 +23,44 @@ function Form({ login }) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">
-          Email:
-          <input
-            type="text"
-            name="email"
-            id="email"
-            value={userData.email}
-            placeholder="Ingrese un E-mail"
-            onChange={handleChange}
-          />
-        </label>
-        <p>{errors.email}</p>
-        <br />
-        <label htmlFor="password">
-          Contraseña:
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={userData.password}
-            onChange={handleChange}
-          />
-        </label>
-        <p>{errors.password}</p>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
+    <div className="login-container">
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">
+            Email:
+            <input
+              type="text"
+              name="email"
+              id="email"
+              value={userData.email}
+              placeholder="ejemplo@email.com"
+              onChange={handleChange}
+            />
+          </label>
+          <p>{errors.email}</p>
+          <br />
+          <label htmlFor="password">
+            Contraseña:
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="password"
+              value={userData.password}
+              onChange={handleChange}
+            />
+          </label>
+          <p>{errors.password}</p>
+          <br />
+          <button
+            className="opacity"
+            type="submit"
+            disabled={Object.keys(errors).length > 0}
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

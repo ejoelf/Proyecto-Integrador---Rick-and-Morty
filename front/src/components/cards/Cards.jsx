@@ -1,3 +1,4 @@
+import React from "react";
 import Card from "../card/Card";
 
 export default function Cards(props) {
@@ -12,7 +13,7 @@ export default function Cards(props) {
           status={char.status}
           species={char.species}
           gender={char.gender}
-          origin={char.origin.name}
+          origin={char.origin?.name}
           image={char.image}
           onClose={onClose}
         />
