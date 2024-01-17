@@ -16,7 +16,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(C:\Users\Joel\Desktop\Soy Henry\Modulo 2\PI-ejoelf\front\src\assets\img\prueba2.jpeg);
+  background-image: url("C:\Users\Joel\Desktop\Soy Henry\Modulo 2\PI-ejoelf\front\src\assets\img\form.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

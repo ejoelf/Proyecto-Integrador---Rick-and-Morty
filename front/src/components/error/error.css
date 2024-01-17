@@ -1,0 +1,21 @@
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.error-image {
+  width: 100%;
+  max-width: 500px; /* Ajusta el tamaño máximo según tus preferencias */
+  animation: fadeIn 1s ease-in; /* Agrega una animación de fadeIn si lo deseas */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./searchBar.css";
 
 export default function SearchBar(props) {
   const [id, setId] = useState("");
@@ -19,12 +20,12 @@ export default function SearchBar(props) {
   };
 
   return (
-    <div>
+    <div className="search-bar">
       <input
         type="search"
         onChange={handleChange}
         onKeyPress={handleKeyPress}
-        placeholder="Ingresa un ID"
+        placeholder="Ingresa un ID 🔎"
         value={id}
       />
       <button onClick={search} disabled={!id.trim()}>

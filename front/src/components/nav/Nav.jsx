@@ -5,7 +5,7 @@ import "./nav.css";
 export default function Nav({ onSearch }) {
   return (
     <nav>
-      <Link to="/home">
+      <Link to="/Home">
         <button>Home</button>
       </Link>
       <Link to="/About">
