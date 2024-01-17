@@ -25,8 +25,9 @@ function Form({ login }) {
   return (
     <div className="login-container">
       <div className="form-container">
+        <h1 className="text">Login</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="email">
+          <label htmlFor="email" className="text">
             Email:
             <input
               type="text"
@@ -39,7 +40,7 @@ function Form({ login }) {
           </label>
           <p>{errors.email}</p>
           <br />
-          <label htmlFor="password">
+          <label htmlFor="password" className="text">
             Contraseña:
             <input
               type="password"

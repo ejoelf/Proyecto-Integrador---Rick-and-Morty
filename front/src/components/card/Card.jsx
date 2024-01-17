@@ -12,7 +12,7 @@ export default function Card({
   onClose,
 }) {
   return (
-    <div>
+    <div className="card-container">
       <button onClick={() => onClose(id)}>X</button>
       <h2>{id}</h2>
       <Link to={`/detail/${id}`}>

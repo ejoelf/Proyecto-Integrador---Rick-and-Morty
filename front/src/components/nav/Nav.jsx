@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar.jsx";
+import "./nav.css";
 
 export default function Nav({ onSearch }) {
   return (
