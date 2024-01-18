@@ -1,3 +1,4 @@
+/* Form.css */
 body,
 html {
   margin: 0;
@@ -16,7 +17,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("C:\Users\Joel\Desktop\Soy Henry\Modulo 2\PI-ejoelf\front\src\assets\img\form.jpeg");
+  background-image: url("../../assets/img/form.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,6 +40,7 @@ html {
 
 .login-container form label {
   font-size: 18px;
+  color: black;
   margin-bottom: 10px;
 }
 
@@ -91,6 +93,10 @@ html {
 
 .opacity {
   opacity: 0.6;
+}
+
+.wobble {
+  animation: wobble 1s infinite;
 }
 
 @keyframes wobble {

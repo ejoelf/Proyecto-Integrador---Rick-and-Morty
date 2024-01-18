@@ -28,13 +28,14 @@ function Form({ login }) {
         <h1 className="text">Login</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email" className="text">
-            Email:
+            E-mail:
             <input
               type="text"
               name="email"
               id="email"
               value={userData.email}
               placeholder="ejemplo@email.com"
+              autoComplete="off"
               onChange={handleChange}
             />
           </label>
@@ -54,7 +55,7 @@ function Form({ login }) {
           <p>{errors.password}</p>
           <br />
           <button
-            className="opacity"
+            className="opacity wobble"
             type="submit"
             disabled={Object.keys(errors).length > 0}
           >

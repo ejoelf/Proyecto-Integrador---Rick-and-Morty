@@ -1,14 +1,11 @@
 .search-bar {
   display: flex;
-  margin-left: auto;
   align-items: center;
 }
-
 .search-bar input {
+  flex: 1;
   padding: 0.5em;
-  margin-right: 2em;
-  display: block;
-  width: 100%;
+  margin-right: 10px;
   color: white;
   outline: none;
   background-color: transparent;
@@ -29,12 +26,10 @@
   border-radius: 5px;
   cursor: pointer;
   background-color: green;
-  display: block;
   outline: none;
   font-size: 16px;
   letter-spacing: 1.5px;
   font-weight: bold;
-  width: 100%;
   transition: all 0.3s ease-in-out;
   border: none;
 }

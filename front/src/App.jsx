@@ -8,6 +8,7 @@ import About from "./components/about/About.jsx";
 import Detail from "./components/detail/Detail.jsx";
 import Error from "./components/error/Error.jsx";
 import Form from "./components/form/Form.jsx";
+import Favourites from "./components/favourites/Favourites.jsx";
 
 function App() {
   const { pathname } = useLocation();
@@ -15,6 +16,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false);
   const URL = "https://rym2.up.railway.app/api/character/";
+  // const URL_ALTERNATIVA = "https://rickandmortyapi.com/api/character/";
   const API_KEY = "henrystaff";
   const EMAIL = "joel@mail.com";
   const PASSWORD = "pass123";
@@ -25,6 +27,7 @@ function App() {
       return alert(`Ya existe el personaje con el id ${id}`);
     axios
       .get(`${URL}${id}?key=${API_KEY}`)
+      // .get(`${URL_ALTERNATIVA}`)
       .then(({ data }) => {
         if (data.name) {
           setCharacters([data, ...characters]);
@@ -42,7 +45,7 @@ function App() {
   const login = ({ email, password }) => {
     if (email === EMAIL && password === PASSWORD) {
       setAccess(true);
-      navigate("/home");
+      navigate("/Home");
     } else alert("Usuario o Contraseña incorrectos");
   };
 
@@ -61,6 +64,7 @@ function App() {
         />
         <Route path="/About" element={<About />} />
         <Route path="/Detail/:id" element={<Detail />} />
+        <Route path="/Favourites" element={<Favourites />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>

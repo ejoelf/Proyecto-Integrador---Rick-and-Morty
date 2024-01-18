@@ -7,16 +7,25 @@ function Detail() {
   //montaje
   const { id } = useParams();
   const [character, setCharacters] = useState({});
+  // const URL_ALTERNATIVA = "https://rickandmortyapi.com/api/character/";
   const URL = "https://rym2.up.railway.app/api/character/";
   const API_KEY = "henrystaff";
 
   useEffect(() => {
-    axios.get(`${URL}${id}?key=${API_KEY}`).then(({ data }) => {
-      if (data.name) setCharacters(data);
-      else alert("No hay personajes con ese ID");
-    });
-    return setCharacters({}); //desmontaje
-  }, [id]); //actualización
+    axios
+      .get(`${URL}${id}?key=${API_KEY}`)
+      // .get(`${URL_ALTERNATIVA}`)
+      .then(({ data }) => {
+        if (data.name) {
+          setCharacters(data);
+        } else {
+          alert("No hay personajes con ese ID");
+        }
+      })
+      .catch((error) => {
+        console.error("Error al cargar detalles:", error.message);
+      });
+  }, [id]);
 
   return (
     <div className="detail-container">

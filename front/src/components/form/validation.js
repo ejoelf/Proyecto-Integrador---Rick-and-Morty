@@ -9,11 +9,10 @@ function validation(data) {
   if (!regexEmail.test(data.email)) {
     errors.email = "Debe ser un email valido";
   } else if (!expresionRegular.test(data.email)) {
-    errors.email = "El email debe tener entre 1 y 35 caracteres";
+    errors.email = "E-mail incorrecto";
   }
   if (!regexPassword.test(data.password)) {
-    errors.password =
-      "La contraseña debe tener al menos un numero y tener una longitud entre 6 y 10 caracteres";
+    errors.password = "Contraseña incorrecta";
   }
   return errors;
 }
