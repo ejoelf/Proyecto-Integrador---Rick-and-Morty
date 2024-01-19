@@ -6,7 +6,7 @@ function About() {
   return (
     <div className="card">
       <div className="img-bx">
-        <img src="../../assets/img/Yo.jpg/" alt="Joel" />
+        <img src="../../assets/img/yo.jpg" alt="Joel" />
       </div>
       <div className="content">
         <div className="detail">

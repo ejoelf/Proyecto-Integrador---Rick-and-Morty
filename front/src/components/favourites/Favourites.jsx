@@ -15,7 +15,7 @@ function Favourites({ myFavorites }) {
   };
 
   return (
-    <div>
+    <div className="container">
       <div>
         <select
           name="order"
