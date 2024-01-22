@@ -2,9 +2,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #181717;
-  color: white;
+  padding: 0 10px;
+  background-color: black;
+  color: #fff;
+}
+
+nav img {
+  width: 120px;
 }
 
 nav button {
@@ -12,7 +16,7 @@ nav button {
   color: white;
   border-radius: 5px;
   cursor: pointer;
-  background-color: green;
+  background-color: rgb(42, 110, 42);
   display: block;
   outline: none;
   font-size: 16px;
