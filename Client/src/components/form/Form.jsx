@@ -55,7 +55,7 @@ function Form({ login }) {
           <p>{errors.password}</p>
           <br />
           <button
-            className="opacity wobble"
+            className="opacity"
             type="submit"
             disabled={Object.keys(errors).length > 0}
           >

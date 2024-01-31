@@ -2,6 +2,7 @@ import React from "react";
 import { connect, useDispatch } from "react-redux";
 import Card from "../card/Card";
 import { filterCards, orderCards } from "../../redux/action";
+import "./favourite.css";
 
 function Favourites({ myFavorites }) {
   const dispatch = useDispatch();
@@ -15,8 +16,8 @@ function Favourites({ myFavorites }) {
   };
 
   return (
-    <div className="container">
-      <div>
+    <div className="containerFavorite">
+      <div className="barraFavoritos">
         <select
           name="order"
           defaultValue="orderCharacter"
@@ -25,8 +26,8 @@ function Favourites({ myFavorites }) {
           <option value="orderCharacter" disabled="disabled">
             Order...
           </option>
-          <option value="ascendente">Ascendente</option>
-          <option value="descendente">Descendente</option>
+          <option value="ascendente">Upward</option>
+          <option value="descendente">Falling</option>
         </select>
         <select name="filter" defaultValue="All" onChange={handleFilter}>
           <option value="Male">Male</option>
