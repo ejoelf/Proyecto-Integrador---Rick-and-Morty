@@ -1,12 +1,8 @@
 const express = require("express");
 const server = express();
 const morgan = require("morgan");
-const { route } = require("./routes");
+const router = require("./routes");
 const PORT = 3001;
-
-server.listen(PORT, () => {
-  console.log("Server raised in port: " + PORT);
-});
 
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -17,6 +13,10 @@ server.use((req, res, next) => {
   );
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();
+});
+
+server.listen(PORT, () => {
+  console.log("Server raised in port: " + PORT);
 });
 
 server.use(express.json());
