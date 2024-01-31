@@ -34,7 +34,7 @@ function Form({ login }) {
               name="email"
               id="email"
               value={userData.email}
-              placeholder="ejemplo@email.com"
+              placeholder="example@email.com"
               autoComplete="off"
               onChange={handleChange}
             />
@@ -42,7 +42,7 @@ function Form({ login }) {
           <p>{errors.email}</p>
           <br />
           <label htmlFor="password" className="text">
-            Contraseña:
+            Password:
             <input
               type="password"
               name="password"

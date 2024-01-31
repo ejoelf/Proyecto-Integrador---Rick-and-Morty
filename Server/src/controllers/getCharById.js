@@ -4,8 +4,8 @@ const API_KEY = "henrystaff";
 
 const getCharById = async (req, res) => {
   try {
-    const { dataId } = req.params.data;
-    const { data } = await axios.get(`${URL}${id}?key=${API_KEY}`);
+    const charId = req.params.id;
+    const { data } = await axios.get(`${URL}${charId}?key=${API_KEY}`);
     const { id, status, name, species, origin, image, gender } = data;
     const character = { id, status, name, species, origin, image, gender };
 

@@ -25,11 +25,11 @@ export default function SearchBar(props) {
         type="search"
         onChange={handleChange}
         onKeyPress={handleKeyPress}
-        placeholder="🔎Ingresa un ID"
+        placeholder="🔎 Enter ID"
         value={id}
       />
       <button onClick={search} disabled={!id.trim()}>
-        Agregar
+        Add
       </button>
     </div>
   );
