@@ -16,42 +16,47 @@ function App() {
   const navigate = useNavigate();
   const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false);
-  // const URL = "https://rym2.up.railway.app/api/character/";
   const URLserver = `http://localhost:3001/rickandmorty/character/`;
-  // const API_KEY = "henrystaff";
   const EMAIL = "joel@mail.com";
   const PASSWORD = "pass123";
 
-  const onSearch = (id) => {
-    if (!id) return alert("Ingresa un ID");
-    if (characters.find((char) => char.id == id))
-      return alert(`Ya existe el personaje con el id ${id}`);
-    axios
-      // .get(`${URL}${id}?key=${API_KEY}`)
-      .get(`${URLserver}${id}`)
-      .then(({ data }) => {
-        if (data.name) {
-          setCharacters([data, ...characters]);
-        } else {
-          alert("No hay personajes con este ID");
-        }
-      })
-      .catch((err) => alert(err.message));
+  const onSearch = async (id) => {
+    try {
+      if (!id) return alert("Ingresa un ID");
+
+      if (characters.find((char) => char.id == id)) {
+        return alert(`Ya existe el personaje con el id ${id}`);
+      }
+
+      const { data } = await axios.get(`${URLserver}${id}`);
+
+      if (data.name) {
+        setCharacters([data, ...characters]);
+      } else {
+        alert("No hay personajes con este ID");
+      }
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   const onClose = (id) => {
     setCharacters(characters.filter((char) => char.id !== id));
   };
 
-  function login(userData) {
-    const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+  async function login(userData) {
+    try {
+      const { email, password } = userData;
+      const URL = "http://localhost:3001/rickandmorty/login/";
+      const { data } = await axios(
+        URL + `?email=${email}&password=${password}`
+      );
       const { access } = data;
       setAccess(data);
       access && navigate("/home");
+    } catch (error) {
       if (!access) return alert("Credenciales Incorrectas");
-    });
+    }
   }
 
   useEffect(() => {
