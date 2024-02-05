@@ -4,11 +4,15 @@ nav {
   align-items: center;
   padding: 0 10px;
   background-color: black;
-  color: #fff;
 }
 
 nav img {
-  width: 120px;
+  width: 140px;
+  transition: all 0.3s ease-in-out;
+}
+
+nav img:hover {
+  transform: scale(1.2);
 }
 
 nav button {
@@ -17,20 +21,36 @@ nav button {
   border-radius: 5px;
   cursor: pointer;
   background-color: rgb(42, 110, 42);
-  display: block;
   outline: none;
   font-size: 16px;
   letter-spacing: 1.5px;
   font-weight: bold;
-  width: 100%;
   transition: all 0.3s ease-in-out;
   border: none;
 }
 
 nav button:hover {
   background-color: rgb(16, 194, 16);
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
-  transform: scale(1.02);
+  transform: scale(1.2);
+}
+
+.logout {
+  padding: 0.5em;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(122, 41, 41);
+  outline: none;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+.logout:hover {
+  background-color: rgb(194, 16, 16);
+  transform: scale(1.2);
 }
 
 nav a {

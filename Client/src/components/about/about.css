@@ -2,9 +2,59 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url("../../assets/img/about.jpeg");
+  background-image: url("../../assets/img/about.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+}
+.about-container {
+  width: 400px;
+  height: auto;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.about-header {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.about-image {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.about-info {
+  margin: 5px 0;
+  color: black;
+  font-size: large;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.about-info h3 span {
+  color: white;
+}
+
+.about-contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.about-contact img {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
 }

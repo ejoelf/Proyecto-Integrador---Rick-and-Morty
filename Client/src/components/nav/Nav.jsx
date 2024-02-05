@@ -5,7 +5,12 @@ import "./nav.css";
 export default function Nav({ onSearch }) {
   return (
     <nav>
-      <img src="../../src/assets/icon/navbar.jpeg" alt="icono-Rick-and-Morty" />
+      <Link to="https://rickandmortyapi.com/" target="_blank">
+        <img
+          src="../../src/assets/icon/navbar.jpeg"
+          alt="icono-Rick-and-Morty"
+        />
+      </Link>
       <Link to="/Home">
         <button>Home</button>
       </Link>
@@ -15,10 +20,10 @@ export default function Nav({ onSearch }) {
       <Link to="/About">
         <button>About</button>
       </Link>
-      <Link to="/Logout">
-        <button>Logout</button>
-      </Link>
       <SearchBar onSearch={onSearch} />
+      <Link to="/Logout">
+        <button className="logout">Logout</button>
+      </Link>
     </nav>
   );
 }

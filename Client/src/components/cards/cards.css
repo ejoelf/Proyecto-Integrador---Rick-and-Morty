@@ -1,10 +1,18 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
 .cards-container {
-  width: 100%;
-  height: 100vh;
+  min-width: 100%;
+  min-height: 100vh;
   display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-image: url("../../assets/img/cards.jpeg");
+  background-image: url("../../assets/img/cards.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

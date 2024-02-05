@@ -1,15 +1,30 @@
+.detail {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../assets/img/detail-favorites.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .detail-container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .detail-header {
+  color: white;
+  font-weight: bold;
   text-align: center;
+  letter-spacing: 1px;
   margin-bottom: 20px;
 }
 
@@ -21,14 +36,14 @@
   margin-bottom: 20px;
 }
 
-.detail-info {
-  text-align: left;
-}
-
-.detail-info h2 {
-  margin-bottom: 10px;
-}
-
-.detail-info h4 {
+.detail-info h3 {
   margin: 5px 0;
+  color: black;
+  font-size: large;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.detail-info h3 span {
+  color: white;
 }

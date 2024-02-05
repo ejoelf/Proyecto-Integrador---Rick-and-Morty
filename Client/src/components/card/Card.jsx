@@ -37,22 +37,31 @@ function Card({
   }, []);
 
   return (
-    <div>
-      {isFav ? (
-        <button onClick={handleFavorite}>❤️</button>
-      ) : (
-        <button onClick={handleFavorite}>🤍</button>
-      )}
-      {pathname === "/Home" && <button onClick={() => onClose(id)}>❌</button>}
-      <h2>{id}</h2>
-      <Link to={`/Detail/${id}`}>
-        <h2>{name}</h2>
+    <div className="card-container">
+      <div className="fav-close">
+        <div className="close">
+          {pathname === "/Home" && (
+            <button onClick={() => onClose(id)}>✖️</button>
+          )}
+        </div>
+        <div className="fav">
+          {isFav ? (
+            <button onClick={handleFavorite}>💚</button>
+          ) : (
+            <button onClick={handleFavorite}>🤍</button>
+          )}
+        </div>
+      </div>
+      <Link to={`/Detail/${id}`} className="link-name">
+        {/* <Link to={`/Detail/${id}`} className="link-name"> */}
+        <h2>
+          {id} {name}
+        </h2>
+        {/* </Link> */}
+        <div className="card-image">
+          <img src={image} alt={name} />
+        </div>
       </Link>
-      <h2>{species}</h2>
-      <h2>{status}</h2>
-      <h2>{gender}</h2>
-      <h2>{origin}</h2>
-      <img src={image} alt={name} />
     </div>
   );
 }

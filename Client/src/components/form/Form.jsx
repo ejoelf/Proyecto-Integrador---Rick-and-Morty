@@ -26,10 +26,11 @@ function Form({ login }) {
     <div className="login-container">
       <div className="form-container">
         <h1 className="text">Login</h1>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="email" className="text">
+        <form onSubmit={handleSubmit} className="login">
+          <label htmlFor="email" className="label">
             E-mail:
             <input
+              className="input"
               type="text"
               name="email"
               id="email"
@@ -39,11 +40,12 @@ function Form({ login }) {
               onChange={handleChange}
             />
           </label>
-          <p>{errors.email}</p>
+          <p className="error">{errors.email}</p>
           <br />
-          <label htmlFor="password" className="text">
+          <label htmlFor="password" className="label">
             Password:
             <input
+              className="input"
               type="password"
               name="password"
               id="password"
@@ -52,10 +54,10 @@ function Form({ login }) {
               onChange={handleChange}
             />
           </label>
-          <p>{errors.password}</p>
+          <p className="error">{errors.password}</p>
           <br />
           <button
-            className="opacity"
+            className="boton"
             type="submit"
             disabled={Object.keys(errors).length > 0}
           >

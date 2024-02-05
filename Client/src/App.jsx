@@ -31,7 +31,7 @@ function App() {
       const { data } = await axios.get(`${URLserver}${id}`);
 
       if (data.name) {
-        setCharacters([data, ...characters]);
+        setCharacters([...characters, data]);
       } else {
         alert("No hay personajes con este ID");
       }

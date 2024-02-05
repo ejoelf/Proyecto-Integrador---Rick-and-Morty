@@ -28,22 +28,32 @@ function Detail() {
   }, [id]);
 
   return (
-    <div className="detail-container">
-      <div className="detail-header">
-        <h2>Name: {character.name}</h2>
+    <section className="detail">
+      <div className="detail-container">
+        <div className="detail-header">
+          <h2>{character.name}</h2>
+        </div>
+        <img
+          className="detail-image"
+          src={character.image}
+          alt={character.name}
+        />
+        <div className="detail-info">
+          <h3>
+            Status: <span>{character.status}</span>
+          </h3>
+          <h3>
+            Specie: <span>{character.species}</span>
+          </h3>
+          <h3>
+            Gender: <span>{character.gender}</span>
+          </h3>
+          <h3>
+            Origin: <span>{character.origin?.name}</span>
+          </h3>
+        </div>
       </div>
-      <img
-        className="detail-image"
-        src={character.image}
-        alt={character.name}
-      />
-      <div className="detail-info">
-        <h4>Status: {character.status}</h4>
-        <h4>Specie: {character.species}</h4>
-        <h4>Gender: {character.gender}</h4>
-        <h4>Origin: {character.origin?.name}</h4>
-      </div>
-    </div>
+    </section>
   );
 }
 
