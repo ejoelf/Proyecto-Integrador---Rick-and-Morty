@@ -53,7 +53,7 @@ function App() {
       );
       const { access } = data;
       setAccess(data);
-      access && navigate("/home");
+      access && navigate("/Home");
     } catch (error) {
       if (!access) return alert("Credenciales Incorrectas");
     }
