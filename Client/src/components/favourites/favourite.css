@@ -1,8 +1,16 @@
-.containerFavorite {
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.cards-container-fav {
   min-width: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   background-image: url("../../assets/img/detail-favorites.jpeg");
   background-size: cover;
@@ -13,18 +21,31 @@
 .barraFavoritos {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
 }
 
 .barraFavoritos select {
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  background-color: transparent;
+  color: white;
   margin-right: 10px;
   padding: 8px;
+  border: none;
+}
+
+.barraFavoritos select option {
+  font-size: large;
+  font-weight: 400;
+  text-align: justify;
+  background-color: black;
+  color: green;
+  margin-right: 10px;
+  padding: 8px;
+  border: none;
 }
 
 .fav-close {

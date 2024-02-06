@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, LOGOUT } from "./actionTypes";
 
 export const addFav = (character) => {
   return async (dispatch) => {
@@ -8,7 +9,7 @@ export const addFav = (character) => {
       const { data } = response;
 
       dispatch({
-        type: "ADD_FAV",
+        type: ADD_FAV,
         payload: data,
       });
     } catch (error) {
@@ -25,7 +26,7 @@ export const removeFav = (id) => {
       const { data } = response;
 
       dispatch({
-        type: "REMOVE_FAV",
+        type: REMOVE_FAV,
         payload: data,
       });
     } catch (error) {
@@ -45,5 +46,11 @@ export const orderCards = (orden) => {
   return {
     type: ORDER,
     payload: orden,
+  };
+};
+
+export const logout = () => {
+  return {
+    type: LOGOUT,
   };
 };

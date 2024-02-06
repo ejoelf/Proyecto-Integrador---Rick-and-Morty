@@ -1,4 +1,4 @@
-import { ADD_FAV, FILTER, REMOVE_FAV, ORDER } from "./actionTypes";
+import { ADD_FAV, FILTER, REMOVE_FAV, ORDER, LOGOUT } from "./actionTypes";
 
 const initialState = {
   myFavorites: [],
@@ -7,29 +7,32 @@ const initialState = {
 
 function reducer(state = initialState, { type, payload }) {
   switch (type) {
-    case "ADD_FAV":
+    case ADD_FAV:
       return { ...state, myFavorites: payload, allCharacters: payload };
-    case "REMOVE_FAV":
+    case REMOVE_FAV:
       return { ...state, myFavorites: payload };
     case FILTER:
-      const genderFiltered = state.allCharacters.filter(
-        (char) => char.gender == payload
-      );
+      const filteredFavorites =
+        payload === "All"
+          ? state.allCharacters
+          : state.myFavorites.filter((char) => char.gender === payload);
 
       return {
         ...state,
-        myFavorites: payload === "All" ? state.allCharacters : genderFiltered,
+        myFavorites: filteredFavorites,
       };
     case ORDER:
-      const orderCharacter = state.myFavorites.sort((a, b) => {
+      const orderedFavorites = [...state.myFavorites].sort((a, b) => {
         if (payload === "ascendente") return a.id - b.id;
         return b.id - a.id;
       });
 
       return {
         ...state,
-        myFavorites: [...orderCharacter],
+        myFavorites: orderedFavorites,
       };
+    case LOGOUT:
+      return initialState;
 
     default:
       return state;

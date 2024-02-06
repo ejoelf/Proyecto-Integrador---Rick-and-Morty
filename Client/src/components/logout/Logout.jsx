@@ -1,20 +1,22 @@
 import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { logout } from "../../redux/action";
 import { useNavigate } from "react-router-dom";
 
-function Logout({ onLogout }) {
+function Logout({ logout }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    onLogout();
+    logout();
     navigate("/");
-  }, [onLogout, navigate]);
+  }, [logout, navigate]);
 
   return (
     <div>
-      //Lograr hacer ver la imagen antes de salir
+      {/* Aquí puedes mostrar cualquier contenido que desees, como una imagen */}
       <img src="../../assets/img/logout.jpeg" alt="logout" />
     </div>
   );
 }
 
-export default Logout;
+export default connect(null, { logout })(Logout);

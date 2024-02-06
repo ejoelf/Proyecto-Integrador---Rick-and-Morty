@@ -22,7 +22,15 @@ function App() {
 
   const onSearch = async (id) => {
     try {
-      if (!id) return alert("Ingresa un ID");
+      if (!id) {
+        const getRandomNumber = (min, max) => {
+          return Math.floor(Math.random() * (max - min) + min);
+        };
+        const getRandomId = () => {
+          return getRandomNumber(1, 827);
+        };
+        id = getRandomId();
+      }
 
       if (characters.find((char) => char.id == id)) {
         return alert(`Ya existe el personaje con el id ${id}`);
