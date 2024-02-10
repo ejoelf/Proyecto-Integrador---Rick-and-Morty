@@ -14,8 +14,7 @@ export default function SearchBar(props) {
     }
   };
 
-  const search = (event) => {
-    event.preventDefault();
+  const search = () => {
     props.onSearch(id);
     setId("");
   };
@@ -29,9 +28,7 @@ export default function SearchBar(props) {
         placeholder="🔎 Enter ID"
         value={id}
       />
-      <button onClick={search} disabled={!id.trim()}>
-        Add
-      </button>
+      <button onClick={search}>Add</button>
     </div>
   );
 }
