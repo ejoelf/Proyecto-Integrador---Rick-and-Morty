@@ -14,7 +14,7 @@ function reducer(state = initialState, { type, payload }) {
     case FILTER:
       const filteredFavorites =
         payload === "All"
-          ? state.allCharacters
+          ? state.myFavorites
           : state.myFavorites.filter((char) => char.gender === payload);
 
       return {
