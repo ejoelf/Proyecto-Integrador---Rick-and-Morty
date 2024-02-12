@@ -5,28 +5,30 @@ const initialState = {
   allCharacters: [],
 };
 
-function reducer(state = initialState, { type, payload }) {
+function reducer(state = initialState, action) {
+  const { type, payload } = action;
+
+  const filteredFavorites =
+    payload === "All"
+      ? state.myFavorites
+      : state.myFavorites.filter((char) => char.gender === payload);
+
+  const orderedFavorites = [...state.myFavorites].sort((a, b) => {
+    if (payload === "ascendente") return a.id - b.id;
+    return b.id - a.id;
+  });
+
   switch (type) {
     case ADD_FAV:
       return { ...state, myFavorites: payload, allCharacters: payload };
     case REMOVE_FAV:
       return { ...state, myFavorites: payload };
     case FILTER:
-      const filteredFavorites =
-        payload === "All"
-          ? state.myFavorites
-          : state.myFavorites.filter((char) => char.gender === payload);
-
       return {
         ...state,
         myFavorites: filteredFavorites,
       };
     case ORDER:
-      const orderedFavorites = [...state.myFavorites].sort((a, b) => {
-        if (payload === "ascendente") return a.id - b.id;
-        return b.id - a.id;
-      });
-
       return {
         ...state,
         myFavorites: orderedFavorites,
