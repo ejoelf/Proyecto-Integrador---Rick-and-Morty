@@ -1,5 +1,5 @@
 const { where } = require("sequelize");
-const { Favorite } = require("../DB_connection");
+const { Favorite } = require("../database/DB_connection");
 
 const postFav = async (req, res) => {
   try {
